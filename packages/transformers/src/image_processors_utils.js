@@ -832,18 +832,22 @@ export class ImageProcessor extends Callable {
             // Try resize so that shortest edge is `shortest_edge` (target)
             const shortResizeFactor =
                 shortest_edge === undefined
-                    ? 1 // If `shortest_edge` is not set, don't upscale
+                    ? 1 // Leave the size unchanged until the longest-edge resize
                     : Math.max(shortest_edge / srcWidth, shortest_edge / srcHeight);
 
             const newWidth = srcWidth * shortResizeFactor;
             const newHeight = srcHeight * shortResizeFactor;
 
-            // The new width and height might be greater than `longest_edge`, so
-            // we downscale again to ensure the largest dimension is `longest_edge`
+            // With both edges set, `longest_edge` only limits the shortest-edge resize.
+            // With only `longest_edge`, resize to that target, including upscaling.
             const longResizeFactor =
                 longest_edge === undefined
                     ? 1 // If `longest_edge` is not set, don't downscale
-                    : Math.min(longest_edge / newWidth, longest_edge / newHeight);
+                    : Math.min(
+                          shortest_edge === undefined ? Infinity : 1,
+                          longest_edge / newWidth,
+                          longest_edge / newHeight,
+                      );
 
             // To avoid certain floating point precision issues, we round to 2 decimal places
             let finalWidth = Math.floor(Number((newWidth * longResizeFactor).toFixed(2)));

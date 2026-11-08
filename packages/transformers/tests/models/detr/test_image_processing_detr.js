@@ -19,11 +19,11 @@ export default () => {
         const image = await load_cached_image("tiger");
         const { pixel_values, original_sizes, reshaped_input_sizes, pixel_mask } = await processor(image);
 
-        expect(pixel_values.dims).toEqual([1, 3, 888, 1333]);
-        expect(pixel_values.mean().item()).toBeCloseTo(-0.27840224131001773, 6);
+        expect(pixel_values.dims).toEqual([1, 3, 800, 1200]);
+        expect(pixel_values.mean().item()).toBeCloseTo(-0.278209388256073, 6);
 
         expect(original_sizes).toEqual([[408, 612]]);
-        expect(reshaped_input_sizes).toEqual([[888, 1333]]);
+        expect(reshaped_input_sizes).toEqual([[800, 1200]]);
 
         expect(pixel_mask.dims).toEqual([1, 64, 64]);
         expect(pixel_mask.to("float32").mean().item()).toBeCloseTo(1.0, 6);

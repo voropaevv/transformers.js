@@ -27,24 +27,29 @@ export default () => {
 
           const target = [
             {
-              score: 0.9921281933784485,
+              score: 0.9899669289588928,
               label: "remote",
-              box: { xmin: 32, ymin: 78, xmax: 185, ymax: 117 },
+              box: { xmin: 46, ymin: 72, xmax: 179, ymax: 119 },
             },
             {
-              score: 0.9884883165359497,
+              score: 0.9431672692298889,
               label: "remote",
-              box: { xmin: 324, ymin: 82, xmax: 376, ymax: 191 },
+              box: { xmin: 336, ymin: 79, xmax: 368, ymax: 192 },
             },
             {
-              score: 0.9197800159454346,
+              score: 0.9497547149658203,
               label: "cat",
-              box: { xmin: 5, ymin: 56, xmax: 321, ymax: 469 },
+              box: { xmin: 338, ymin: 19, xmax: 638, ymax: 372 },
             },
             {
-              score: 0.9300552606582642,
+              score: 0.9794249534606934,
               label: "cat",
-              box: { xmin: 332, ymin: 25, xmax: 638, ymax: 369 },
+              box: { xmin: 10, ymin: 53, xmax: 313, ymax: 470 },
+            },
+            {
+              score: 0.9760302305221558,
+              label: "remote",
+              box: { xmin: 41, ymin: 72, xmax: 178, ymax: 119 },
             },
           ];
           expect(output).toBeCloseToNested(target, 5);
@@ -88,18 +93,18 @@ export default () => {
           async () => {
             const output = await pipe(images[0], { threshold: 0 });
             const target = [
-              { score: 0.020360443741083145, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
-              { score: 0.020360419526696205, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
-              { score: 0.02036038413643837, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
-              { score: 0.020360447466373444, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
-              { score: 0.020360389724373817, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
-              { score: 0.020360423251986504, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
-              { score: 0.02036040835082531, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
-              { score: 0.020360363647341728, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
-              { score: 0.020360389724373817, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
-              { score: 0.020360389724373817, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
-              { score: 0.020360343158245087, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
-              { score: 0.020360423251986504, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
+              { score: 0.020384468138217926, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
+              { score: 0.020384423434734344, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
+              { score: 0.020384378731250763, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
+              { score: 0.02038446068763733, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
+              { score: 0.020384378731250763, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
+              { score: 0.020384445786476135, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
+              { score: 0.020384419709444046, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
+              { score: 0.02038433775305748, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
+              { score: 0.02038438245654106, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
+              { score: 0.02038438431918621, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
+              { score: 0.02038429118692875, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
+              { score: 0.020384421572089195, label: "LABEL_31", box: { xmin: 56, ymin: 55, xmax: 169, ymax: 167 } },
             ];
             expect(output).toBeCloseToNested(target, 5);
           },

@@ -37,23 +37,23 @@ export default () => {
           // Next, compare scores and labels
           const target = [
             {
-              score: 0.9918501377105713,
+              score: 0.9920125603675842,
               label: "cat",
             },
             {
-              score: 0.9985815286636353,
+              score: 0.9987540245056152,
               label: "remote",
             },
             {
-              score: 0.999537467956543,
+              score: 0.9994567036628723,
               label: "remote",
             },
             {
-              score: 0.9919270277023315,
+              score: 0.9733413457870483,
               label: "couch",
             },
             {
-              score: 0.9993696808815002,
+              score: 0.9993967413902283,
               label: "cat",
             },
           ];
