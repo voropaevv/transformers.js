@@ -28,9 +28,9 @@ export default () => {
         const { pred_masks, iou_scores } = await model(inputs);
 
         expect(pred_masks.dims).toEqual([1, 1, 3, 256, 256]);
-        expect(pred_masks.mean().item()).toBeCloseTo(-5.764908313751221, 3);
+        expect(pred_masks.mean().item()).toBeCloseTo(-5.7136311531066895, 3);
         expect(iou_scores.dims).toEqual([1, 1, 3]);
-        expect(iou_scores.tolist()).toBeCloseToNested([[[0.8583833575248718, 0.9773167967796326, 0.8511142730712891]]]);
+        expect(iou_scores.tolist()).toBeCloseToNested([[[0.8487166166305542, 0.9823029637336731, 0.8387575149536133]]]);
 
         // Post-process masks
         const masks = await processor.post_process_masks(pred_masks, inputs.original_sizes, inputs.reshaped_input_sizes);

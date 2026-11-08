@@ -22,7 +22,7 @@ export default () => {
         const image = await load_cached_image("pattern_3x3");
         const { pixel_values, original_sizes, reshaped_input_sizes } = await processor(image);
         expect(pixel_values.dims).toEqual([1, 3, 1024, 1024]);
-        expect(pixel_values.mean().item()).toBeCloseTo(-0.4505715670146813, 6);
+        expect(pixel_values.mean().item()).toBeCloseTo(0.24340280890464783, 6);
 
         expect(original_sizes).toEqual([[3, 3]]);
         expect(reshaped_input_sizes).toEqual([[1024, 1024]]);

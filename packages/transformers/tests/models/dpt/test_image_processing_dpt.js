@@ -21,7 +21,7 @@ export default () => {
         const { pixel_values, original_sizes, reshaped_input_sizes } = await processor(image);
 
         expect(pixel_values.dims).toEqual([1, 3, 384, 384]);
-        expect(pixel_values.mean().item()).toBeCloseTo(0.0372855559389454, 6);
+        expect(pixel_values.mean().item()).toBeCloseTo(0.036558400839567184, 6);
 
         expect(original_sizes).toEqual([[480, 640]]);
         expect(reshaped_input_sizes).toEqual([[384, 384]]);
@@ -50,7 +50,7 @@ export default () => {
         const { pixel_values, original_sizes, reshaped_input_sizes } = await processor(image);
 
         expect(pixel_values.dims).toEqual([1, 3, 518, 686]);
-        expect(pixel_values.mean().item()).toBeCloseTo(0.30337387323379517, 3);
+        expect(pixel_values.mean().item()).toBeCloseTo(0.3019101023674011, 3);
 
         expect(original_sizes).toEqual([[480, 640]]);
         expect(reshaped_input_sizes).toEqual([[518, 686]]);

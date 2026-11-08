@@ -27,24 +27,24 @@ export default () => {
 
           const target = [
             {
-              score: 0.9921281933784485,
+              score: 0.9908784031867981,
               label: "remote",
-              box: { xmin: 32, ymin: 78, xmax: 185, ymax: 117 },
+              box: { xmin: 32, ymin: 79, xmax: 185, ymax: 117 },
             },
             {
-              score: 0.9884883165359497,
+              score: 0.9102206826210022,
               label: "remote",
-              box: { xmin: 324, ymin: 82, xmax: 376, ymax: 191 },
+              box: { xmin: 325, ymin: 82, xmax: 377, ymax: 191 },
             },
             {
-              score: 0.9197800159454346,
+              score: 0.9318320751190186,
               label: "cat",
-              box: { xmin: 5, ymin: 56, xmax: 321, ymax: 469 },
+              box: { xmin: 5, ymin: 58, xmax: 321, ymax: 469 },
             },
             {
-              score: 0.9300552606582642,
+              score: 0.9262467622756958,
               label: "cat",
-              box: { xmin: 332, ymin: 25, xmax: 638, ymax: 369 },
+              box: { xmin: 332, ymin: 26, xmax: 638, ymax: 370 },
             },
           ];
           expect(output).toBeCloseToNested(target, 5);

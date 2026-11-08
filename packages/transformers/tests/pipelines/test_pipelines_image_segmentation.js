@@ -103,7 +103,6 @@ export default () => {
             { score: null, label: "Right-leg" },
             { score: null, label: "Left-arm" },
             { score: null, label: "Right-arm" },
-            { score: null, label: "Bag" },
           ];
 
           expect(output).toBeCloseToNested(target, 2);

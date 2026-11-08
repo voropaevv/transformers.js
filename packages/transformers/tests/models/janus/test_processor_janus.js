@@ -36,7 +36,7 @@ export default () => {
         expect(images_emb_mask.dims).toEqual([1, 1, num_image_tokens]);
         expect(images_emb_mask.to("float32").mean().item()).toBeCloseTo(1);
         expect(pixel_values.dims).toEqual([1, 1, 3, image_size, image_size]);
-        expect(pixel_values.mean().item()).toBeCloseTo(0.5999642610549927, 6);
+        expect(pixel_values.mean().item()).toBeCloseTo(0.6002928614616394, 6);
 
         expect(original_sizes).toEqual([[206, 767]]);
         expect(reshaped_input_sizes).toEqual([[103, image_size]]);

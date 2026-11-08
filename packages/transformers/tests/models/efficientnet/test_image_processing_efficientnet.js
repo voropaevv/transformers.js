@@ -36,7 +36,7 @@ export default () => {
         const image = await load_cached_image("cats");
         const { pixel_values, original_sizes, reshaped_input_sizes } = await processor(image);
         expect(pixel_values.dims).toEqual([1, 3, 224, 224]);
-        expect(pixel_values.mean().item()).toBeCloseTo(0.3015307230282871, 6);
+        expect(pixel_values.mean().item()).toBeCloseTo(0.303191602230072, 6);
         expect(original_sizes).toEqual([[480, 640]]);
         expect(reshaped_input_sizes).toEqual([[224, 224]]);
       },

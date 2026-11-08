@@ -21,7 +21,7 @@ export default () => {
         const { pixel_values, original_sizes, reshaped_input_sizes } = await processor(image);
 
         expect(pixel_values.dims).toEqual([1, 3, 256, 256]);
-        expect(pixel_values.mean().item()).toBeCloseTo(0.4599160496887033, 6);
+        expect(pixel_values.mean().item()).toBeCloseTo(0.4596569836139679, 6);
 
         expect(original_sizes).toEqual([[408, 612]]);
         expect(reshaped_input_sizes).toEqual([[256, 256]]);
@@ -82,7 +82,7 @@ export default () => {
         expect(reshaped_input_sizes).toEqual([[256, 256]]);
 
         // Ensure RGB to BGR conversion
-        expect(data.slice(0, 3)).toBeCloseToNested([0.24313725531101227, 0.250980406999588, 0.364705890417099], 4);
+        expect(data.slice(0, 3)).toBeCloseToNested([0.250980406999588, 0.27450981736183167, 0.3294117748737335], 4);
       },
       MAX_TEST_EXECUTION_TIME,
     );

@@ -430,10 +430,17 @@ export class RawImage {
                 case 'nearest':
                 case 'bilinear':
                 case 'bicubic':
-                    // Perform resizing using affine transform.
-                    // This matches how the python Pillow library does it.
-                    img = img.affine([width / this.width, 0, 0, height / this.height], {
-                        interpolator: resampleMethod,
+                    // Native resize extends the edges instead of sampling affine's black background.
+                    img = img.resize({
+                        width: Math.round(width),
+                        height: Math.round(height),
+                        fit: 'fill',
+                        kernel:
+                            resampleMethod === 'nearest'
+                                ? 'nearest'
+                                : resampleMethod === 'bilinear'
+                                  ? 'linear'
+                                  : 'cubic',
                     });
                     break;
 

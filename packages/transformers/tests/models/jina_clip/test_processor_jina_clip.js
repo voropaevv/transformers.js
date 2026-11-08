@@ -36,7 +36,7 @@ export default () => {
         expect(input_ids.dims).toEqual([sentences.length, 14]);
         expect(attention_mask.dims).toEqual([sentences.length, 14]);
         expect(pixel_values.dims).toEqual([images.length, 3, 512, 512]);
-        expect(pixel_values.mean().item()).toBeCloseTo(0.7857685685157776, 6);
+        expect(pixel_values.mean().item()).toBeCloseTo(0.7921090722084045, 6);
       },
       MAX_TEST_EXECUTION_TIME,
     );
